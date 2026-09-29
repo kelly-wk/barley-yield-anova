@@ -1,0 +1,8 @@
+.Rhistory
+.RData
+.Rproj.user/
+*.html
+!docs/index.html
+*.log
+data/barley.csv
+data/barley.csv.md5

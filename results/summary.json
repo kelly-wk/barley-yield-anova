@@ -1,0 +1,13 @@
+{
+  "n": 120,
+  "primary_model": "yield ~ year + variety + site + variety:site",
+  "year_contrast": "1932 - 1931",
+  "year_estimate": -5.31444533,
+  "year_conf_low": -7.90665550,
+  "year_conf_high": -2.72223517,
+  "year_p_value": 0.000127146252201,
+  "variety_site_interaction_p": 0.985439337614,
+  "best_AICc_model": "year_by_site",
+  "best_AICc": 736.94701416,
+  "morris_swap_year_estimate": -9.38999967
+}

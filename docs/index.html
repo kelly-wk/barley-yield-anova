@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#356F9B">
+  <meta name="description" content="A design-aware factorial analysis of an open barley trial with robust inference and sensitivity checks.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="大麦収量の要因効果分析 / Factorial Analysis of Barley Yield">
+  <meta property="og:description" content="A design-aware factorial analysis of an open barley trial with robust inference and sensitivity checks.">
+  <meta property="og:url" content="https://kelly-wk.github.io/barley-yield-anova/">
+  <meta property="og:image" content="https://kelly-wk.github.io/barley-yield-anova/social-preview.svg">
+  <title>大麦収量の要因効果分析 / Factorial Analysis of Barley Yield</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="tier-public_code" style="--accent:#356F9B;--accent-dark:#252A32;--accent-soft:#E5EFF6;--hero-start:#252A32">
+  <a class="skip-link" href="#content">本文へ / Skip to content</a>
+  <header class="project-hero">
+    <div class="hero-inner">
+      <div class="hero-topline">
+        <div class="eyebrow">
+          <span>統計モデリング・ベイズ推論 / Statistical Modeling &amp; Bayesian Inference</span>
+        </div>
+        <p class="tier-badge"><span lang="ja">公開コード</span><span lang="en">Public code</span></p>
+      </div>
+      <h1><span lang="ja">大麦収量の要因効果分析</span><span lang="en">Factorial Analysis of Barley Yield</span></h1>
+      <div class="hero-summary">
+        <div class="copy-pair lede"><p lang="ja">公開大麦試験データを用い、設計構造・頑健推論・感度分析を統合した要因分析。</p><p class="translation" lang="en">A design-aware factorial analysis of an open barley trial with robust inference and sensitivity checks.</p></div>
+        <div class="hero-facts">
+          <dl class="project-meta">
+            <div><dt>状態 / Status</dt><dd><span lang="ja">再現済み</span><span lang="en">Reproduced</span></dd></div>
+            <div><dt>言語 / Language</dt><dd>R</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="method-block">
+        <p class="method-label">技術スタック / Tech Stack</p>
+        <ul class="method-list" aria-label="Methods"><li>R</li><li>Factorial ANOVA</li><li>Estimated marginal means</li><li>Holm adjustment</li><li>HC3 robust covariance</li><li>AICc, BIC, and LOO comparison</li><li>Sensitivity analysis</li></ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="shell">
+    <section class="evidence-figure" aria-labelledby="figure-title">
+      <div class="section-heading"><p>00</p><h2 id="figure-title">代表的な成果図 <span lang="en">Selected Result Figure</span></h2></div>
+      <figure>
+        <img src="assets/hero.png" alt="大麦収量の要因効果分析の代表的な成果図 / Selected result figure for Factorial Analysis of Barley Yield">
+        <figcaption><span lang="ja">公開可能な検証結果から選んだ図です。</span> <span lang="en">Selected from the validation evidence cleared for publication.</span></figcaption>
+      </figure>
+    </section>
+    <section aria-labelledby="highlights-title">
+      <div class="section-heading"><p>01</p><h2 id="highlights-title">主なポイント <span lang="en">Highlights</span></h2></div>
+      <div class="highlight-grid"><article class="highlight">
+          <span class="highlight-number" aria-hidden="true">1</span>
+          <div class="copy-pair"><p lang="ja">公開された120行の2年×10品種×6地点の均衡データを再現可能に取得。</p><p class="translation" lang="en">Reproducibly acquires the open balanced 120-row, 2-year × 10-variety × 6-site dataset.</p></div>
+        </article><article class="highlight">
+          <span class="highlight-number" aria-hidden="true">2</span>
+          <div class="copy-pair"><p lang="ja">設計を反映したモデルに周辺平均、Holm補正、HC3頑健推論を組み合わせた。</p><p class="translation" lang="en">Combined a design-aware model with marginal means, Holm adjustment, and HC3 robust inference.</p></div>
+        </article><article class="highlight">
+          <span class="highlight-number" aria-hidden="true">3</span>
+          <div class="copy-pair"><p lang="ja">Morris地点の年ラベル入れ替えという既知の懸念を独立した感度分析として明示。</p><p class="translation" lang="en">Made the known Morris year-label swap concern explicit through a separate sensitivity analysis.</p></div>
+        </article></div>
+    </section>
+
+    <section aria-labelledby="flow-title">
+      <div class="section-heading"><p>02</p><h2 id="flow-title">研究の流れ <span lang="en">Research Flow</span></h2></div>
+      <ol class="flow-grid"><li class="flow-card" data-step="1">
+              <h3><span lang="ja">課題</span><span lang="en">Problem</span></h3>
+              <div class="copy-pair"><p lang="ja">年・品種・地点が収量へ与える効果を、実験設計と既知のデータ懸念を尊重して評価する。</p><p class="translation" lang="en">Assess year, variety, and site effects on yield while respecting the experimental design and a known data concern.</p></div>
+            </li><li class="flow-card" data-step="2">
+              <h3><span lang="ja">方法</span><span lang="en">Method</span></h3>
+              <div class="copy-pair"><p lang="ja">要因ANOVA、周辺平均、頑健共分散、情報量規準とLOOで候補モデルを比較する。</p><p class="translation" lang="en">Use factorial ANOVA, marginal means, robust covariance, information criteria, and LOO comparison.</p></div>
+            </li><li class="flow-card" data-step="3">
+              <h3><span lang="ja">検証</span><span lang="en">Validation</span></h3>
+              <div class="copy-pair"><p lang="ja">診断、Multiplicity補正、Morris年ラベルの感度分析で結論の頑健性を確認する。</p><p class="translation" lang="en">Check robustness with diagnostics, multiplicity adjustment, and a Morris year-label sensitivity analysis.</p></div>
+            </li><li class="flow-card" data-step="4">
+              <h3><span lang="ja">成果</span><span lang="en">Outcome</span></h3>
+              <div class="copy-pair"><p lang="ja">1932年と1931年の調整平均差は-5.314で、95%区間は[-7.907, -2.722]。品種×地点交互作用の証拠は弱い。</p><p class="translation" lang="en">The adjusted 1932-minus-1931 difference is -5.314 with a 95% interval of [-7.907, -2.722]; evidence for a variety-by-site interaction is weak.</p></div>
+            </li></ol>
+    </section>
+
+    <section class="limitations" aria-labelledby="limits-title">
+      <div class="section-heading"><p>03</p><h2 id="limits-title">限界と適用範囲 <span lang="en">Limitations &amp; Scope</span></h2></div>
+      <ul><li><div class="copy-pair"><p lang="ja">各セルは圃場反復ではなくブロック平均であり、区画レベルの誤差を復元できない。</p><p class="translation" lang="en">Each cell is already a block mean rather than a plot-level replicate, so plot-level error cannot be recovered.</p></div></li></ul>
+    </section>
+
+    <section class="publication" aria-labelledby="publication-title">
+      <div class="section-heading"><p>04</p><h2 id="publication-title">公開範囲 <span lang="en">Publication Boundary</span></h2></div>
+      <div class="publication-panel">
+        <p class="tier-badge"><span lang="ja">公開コード</span><span lang="en">Public code</span></p>
+        <div class="copy-pair"><p lang="ja">公開データ、完全なR分析、検証結果、図表を独立リポジトリとして公開可能。</p><p class="translation" lang="en">Open data, the complete R analysis, validation results, and figures are suitable for a standalone public repository.</p></div>
+      </div>
+      <div class="cta-grid"><a class="cta" href="https://github.com/kelly-wk/barley-yield-anova"><strong lang="ja">リポジトリ</strong><span lang="en">Repository</span><span aria-hidden="true">↗</span></a><a class="cta" href="https://github.com/kelly-wk/barley-yield-anova/blob/main/REPORT.md"><strong lang="ja">レポート</strong><span lang="en">Report</span><span aria-hidden="true">↗</span></a><a class="cta" href="https://github.com/kelly-wk/barley-yield-anova#reproduce"><strong lang="ja">再現手順</strong><span lang="en">Reproduce</span><span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+
+  <footer>
+    <p><span lang="ja">公開レベルはページ上で常に明示されます。</span> <span lang="en">Publication tier is always shown explicitly.</span></p>
+    <p>kelly-wk · barley-yield-anova</p>
+  </footer>
+</body>
+</html>
